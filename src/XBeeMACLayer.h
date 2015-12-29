@@ -22,6 +22,7 @@ class XBeeMACLayer: public MACLayer{
       MACTransmissionStatus send(const uip_lladdr_t* lladdr_dest, uint8_t* data, uint16_t length, int *number_transmissions);
       virtual bool receive(uip_lladdr_t* lladdr_src, uip_lladdr_t* lladdr_dest, uint8_t* data, uint16_t* length);
       const uip_lladdr_t* getMacAddress();
+      void setSerial(Stream &serial);
 };
 
 #endif

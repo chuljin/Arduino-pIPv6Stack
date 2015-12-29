@@ -78,7 +78,7 @@ bool XBeeMACLayer::sendAtCommand() {
 
 bool XBeeMACLayer::init(){    
 
-	xbee.begin(9600);
+	//xbee.begin(9600);
 	delay(XBEE_INIT_WAITING_TIME); //wait for the XBEE to initialize
 
 	mac_position = 0;
@@ -262,3 +262,8 @@ bool XBeeMACLayer::receive(uip_lladdr_t* lladdr_src, uip_lladdr_t* lladdr_dest, 
 const uip_lladdr_t* XBeeMACLayer::getMacAddress(){
   return &my_mac;
 }
+
+void XBeeMACLayer::setSerial(Stream &serial) {
+	xbee.setSerial(serial);
+}
+
